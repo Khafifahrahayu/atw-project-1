@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>User</title>
+		<link rel="stylesheet" href="/style.css">
+	</head>
+	<body>
+		<%- include('../components/navbar') %>
+		<a href="/users/create">Register</a>
+		<h1>Daftar User (<%=users.length %>) </h1>
+
+		<ul>
+			<% if(users.length >0) { %>
+			<% users.forEach( function(user) { %>
+			<li><a href="/users/<%=user._id %>">
+				<%=user.name.toUpperCase() %></a>
+
+			</li>
+		<% }) %>
+
+		<% } else { %> 
+			<p>Data User Kosong.</p>
+		<% } %>
+		</ul>
+
+		<footer>
+			<p>&copy; 2020 kelas.khafifah Rahayu</p>
+		</footer>
+	</body>
+</html>
